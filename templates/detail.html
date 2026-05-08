@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculation Details</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/reports">Reports</a>
+            <a href="/docs">Swagger Docs</a>
+        </nav>
+
+        <div class="card">
+            {% if calculation %}
+                <h2>Calculation #{{ calculation.id }}</h2>
+
+                <p><strong>First Number:</strong> {{ calculation.first_number }}</p>
+                <p><strong>Second Number:</strong> {{ calculation.second_number }}</p>
+                <p><strong>Operation:</strong> {{ calculation.operation }}</p>
+                <p><strong>Result:</strong> {{ calculation.result }}</p>
+                <p><strong>Note:</strong> {{ calculation.note }}</p>
+                <p><strong>Created At:</strong> {{ calculation.created_at }}</p>
+
+                <a class="button-link" href="/history">Back to History</a>
+            {% else %}
+                <p>This calculation was not found.</p>
+                <a class="button-link" href="/history">Back to History</a>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

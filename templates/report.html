@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation Reports</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculation Reports</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/reports">Reports</a>
+            <a href="/docs">Swagger Docs</a>
+        </nav>
+
+        <div class="card">
+            <h2>Summary Report</h2>
+
+            <p><strong>Total Calculations:</strong> {{ report.total_calculations }}</p>
+            <p><strong>Average Result:</strong> {{ report.average_result }}</p>
+            <p><strong>Highest Result:</strong> {{ report.highest_result }}</p>
+            <p><strong>Lowest Result:</strong> {{ report.lowest_result }}</p>
+            <p><strong>Most Common Operation:</strong> {{ report.most_common_operation }}</p>
+            <p><strong>Latest Result:</strong> {{ report.latest_result }}</p>
+        </div>
+    </div>
+
+</body>
+</html>

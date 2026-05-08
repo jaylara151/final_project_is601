@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IS601 Calculator App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>IS601 Calculator History App</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/reports">Reports</a>
+            <a href="/docs">Swagger Docs</a>
+        </nav>
+
+        <div class="card">
+            <h2>Create a Calculation</h2>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form action="/calculate" method="post">
+                <label>First Number</label>
+                <input type="number" step="any" name="first_number" required>
+
+                <label>Second Number</label>
+                <input type="number" step="any" name="second_number" required>
+
+                <label>Operation</label>
+                <select name="operation" required>
+                    <option value="add">Add</option>
+                    <option value="subtract">Subtract</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="divide">Divide</option>
+                </select>
+
+                <label>Note</label>
+                <input type="text" name="note" placeholder="Optional note">
+
+                <button type="submit">Save Calculation</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

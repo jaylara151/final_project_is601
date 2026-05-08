@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation History</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculation History</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/reports">Reports</a>
+            <a href="/docs">Swagger Docs</a>
+        </nav>
+
+        <div class="card">
+            <h2>Saved Calculations</h2>
+
+            {% if calculations|length == 0 %}
+                <p>No calculations have been saved yet.</p>
+            {% else %}
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Calculation</th>
+                        <th>Result</th>
+                        <th>Note</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    {% for calculation in calculations %}
+                    <tr>
+                        <td>{{ calculation.id }}</td>
+                        <td>
+                            {{ calculation.first_number }}
+                            {{ calculation.operation }}
+                            {{ calculation.second_number }}
+                        </td>
+                        <td>{{ calculation.result }}</td>
+                        <td>
+                            <form action="/history/{{ calculation.id }}/edit" method="post">
+                                <input type="text" name="note" value="{{ calculation.note }}">
+                                <button type="submit">Update Note</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a class="button-link" href="/history/{{ calculation.id }}">View</a>
+
+                            <form class="small-form" action="/history/{{ calculation.id }}/delete" method="post">
+                                <button class="delete-button" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
