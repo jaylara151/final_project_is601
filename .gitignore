@@ -6,3 +6,4 @@ __pycache__/
 htmlcov/
 .pytest_cache/
 .DS_Store
+calculator_app.db
