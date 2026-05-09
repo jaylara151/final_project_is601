@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+htmlcov/
+.coverage
+calculator_app.db
+test_calculator_app.db
+.git/
