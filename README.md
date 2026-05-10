@@ -6,6 +6,17 @@ This project is my final project for IS601. It is a FastAPI web application that
 
 The goal of this project was to build a full web application that uses FastAPI for the backend, SQLAlchemy for database management, HTML/CSS for the front end, Docker for deployment, and GitHub Actions for CI/CD.
 
+## Docker Hub Image
+
+The Docker image for this project is available here:
+
+https://hub.docker.com/r/jaylara/final_project_is601
+
+You can pull the image with:
+
+```bash
+docker pull jaylara/final_project_is601:latest
+
 ## Main Feature
 
 The main feature I added is a **Calculation History and Reports** feature.
@@ -27,21 +38,6 @@ This feature demonstrates BREAD operations:
 - **Edit**: Update a calculation note
 - **Add**: Create a new calculation
 - **Delete**: Delete a saved calculation
-
-## Technologies Used
-
-- Python
-- FastAPI
-- SQLAlchemy
-- SQLite for local development
-- PostgreSQL for Docker deployment
-- Jinja2 templates
-- HTML/CSS
-- Pytest
-- Docker
-- Docker Compose
-- GitHub Actions
-- Docker Hub
 
 ## Project Structure
 
